@@ -1,8 +1,7 @@
 package org.dance;
 
-import javax.persistence.EntityManagerFactory;
-
 import org.hibernate.SessionFactory;
+import org.hibernate.jpa.HibernateEntityManagerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
@@ -42,15 +41,15 @@ public class AppConfig {
 		return new Hibernate5Module();
 	}
 
-	/*@Bean
+	@Bean
 	public SessionFactory sessionFactory(HibernateEntityManagerFactory hemf) {
 		return hemf.getSessionFactory();
-	}*/
+	}
 	
-	@Bean
+/*	@Bean
 	public SessionFactory sessionFactory(EntityManagerFactory entityManagerFactory) {
 		return entityManagerFactory.unwrap(SessionFactory.class);
-	}
+	}*/
 	
 
 	@Bean(name = "multipartResolver")
